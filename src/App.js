@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import api from "./api";
 
-function App() {
+export default function App() {
   const [params, setParams] = useState({ req: 0 });
   const response = api.useSearchQuery(params);
 
@@ -17,5 +17,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
