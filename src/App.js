@@ -12,7 +12,10 @@ export default function App() {
 
   return (
     <div>
-      <button onClick={() => setParams({ req: params.req + 1 })}>
+      <button
+        disabled={response.isFetching}
+        onClick={() => setParams({ req: params.req + 1 })}
+      >
         Refresh
       </button>
       <pre>{JSON.stringify(response, undefined, 3)}</pre>
