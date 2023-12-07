@@ -7,7 +7,12 @@ export default function App() {
   const response = api.useSearchQuery(params);
 
   console.log(
-    `request: ${params.req}\tisFetching: ${response.isFetching}\tisSuccess: ${response.isSuccess}`
+    [
+      `request: ${params.req.toString().padStart(3, "0")}`,
+      `isFetching: ${response.isFetching.toString().padEnd(5)}`,
+      `isSuccess: ${response.isSuccess.toString().padEnd(5)}`,
+      `data: ${JSON.stringify(response.data)}`,
+    ].join("  ")
   );
 
   return (
